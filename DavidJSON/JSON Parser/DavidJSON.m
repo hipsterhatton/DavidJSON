@@ -8,8 +8,8 @@
 
 #import "DavidJSON.h"
 
-#define print_raw_json          true
-#define print_completed_json    true
+#define print_raw_json          false
+#define print_completed_json    false
 #define string_splitter         @"/"
 
 @implementation DavidJSON
@@ -38,6 +38,8 @@
         NSLog(@"Key: %@", key);
         
         NSArray *pathToJSONData = [self _getPath:[dataWeWant valueForKey:key]];
+        
+        NSLog(@"Getting Past Here!");
         
         NSLog(@"Path To Data: %@", pathToJSONData);
         NSLog(@" "); NSLog(@" "); NSLog(@" ");
@@ -111,11 +113,26 @@
     return [[[objectToCreate class] alloc] initWithDictionary:dataWeWant];
 }
 
-- (NSDictionary *)getArrayOfObjects:(NSDictionary *)rawJSON
+- (NSArray *)getArrayOfObjects:(NSDictionary *)rawJSON :(NSString *)pathToArrayWeWant :(NSDictionary *)dataWeWant :(id)objectToCreate
 {
-    return @{};
+    NSArray *arrayOfJSONData = [self getArrayOfData:rawJSON :pathToArrayWeWant];
+    NSMutableArray *arrayOfObjects = [[NSMutableArray alloc] init];
+    
+    if ([arrayOfJSONData isKindOfClass:[NSArray class]]) {
+        NSLog(@"It's an array!");
+        
+        for (int a = 0; a < [arrayOfJSONData count]; a++)
+            [arrayOfObjects addObject: [self getObject:arrayOfJSONData[a] :dataWeWant :objectToCreate]];
+        
+        NSLog(@"Array of Objects: %@", arrayOfObjects);
+        
+    } else {
+        NSLog(@"It's NOT an array!");
+        return NULL;
+    }
+    
+    return arrayOfObjects;
 }
-
 
 
 
@@ -143,6 +160,7 @@
 
 - (NSArray *)_getPath:(NSString *)pathToData
 {
+    NSLog(@"Path to data: %@", pathToData);
     if ([pathToData rangeOfString:string_splitter].location == NSNotFound) {
         return @[ pathToData ]; // Root level
     } else {
@@ -151,4 +169,5 @@
 }
 
 @end
+
 
