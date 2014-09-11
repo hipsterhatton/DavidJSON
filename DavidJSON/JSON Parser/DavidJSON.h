@@ -10,4 +10,6 @@
 
 @interface DavidJSON : NSObject
 
+- (NSDictionary *)getData:(NSDictionary *)rawJSON :(NSDictionary *)dataWeWant;
+
 @end
