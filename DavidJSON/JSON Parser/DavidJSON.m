@@ -27,28 +27,17 @@
 
 - (NSDictionary *)getData:(NSDictionary *)rawJSON :(NSDictionary *)dataWeWant
 {
-    if (![self _checks:rawJSON :dataWeWant])
+    if (![self _checkData:rawJSON :dataWeWant])
         return NULL;
     
     NSArray *listOfKeys = [dataWeWant allKeys];
-    NSMutableDictionary *dataWeHaveFound = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *dictionaryOfDataFound = [[NSMutableDictionary alloc] init];
     
     for (NSString *key in listOfKeys) {
         
         NSLog(@"Key: %@", key);
         
-        NSArray *pathToJSONData;
-        
-        // Check whether the path we need to take to get to the data we want, is multiple levels deep (indicated, by string splitters)
-        //      eg: "Level One / Level Two / Level Three / Data!"
-        // -OR-
-        // Or the data is on the root level
-        //      eg: "Data!"
-        if ([[dataWeWant valueForKey:key] rangeOfString:string_splitter].location == NSNotFound) {
-            pathToJSONData = @[ [dataWeWant valueForKey:key] ]; // Root level
-        } else {
-            pathToJSONData = [[dataWeWant valueForKey:key] componentsSeparatedByString:string_splitter]; // Multiple levels
-        }
+        NSArray *pathToJSONData = [self _getPath:[dataWeWant valueForKey:key]];
         
         NSLog(@"Path To Data: %@", pathToJSONData);
         NSLog(@" "); NSLog(@" "); NSLog(@" ");
@@ -62,7 +51,7 @@
                 rawJSONCopy = [rawJSONCopy objectForKey:pathToJSONData[a]];
                 
                 if (a == [pathToJSONData count]-1)
-                    [dataWeHaveFound setObject:rawJSONCopy forKey:key];
+                    [dictionaryOfDataFound setObject:rawJSONCopy forKey:key];
             } else {
                 NSLog(@"Parse Error: \"%@\" has an incorrect path!", key);
                 return NULL;
@@ -74,24 +63,42 @@
     NSLog(@" ");
     
     if (print_completed_json)
-        NSLog(@"Parsed JSON: %@", dataWeHaveFound);
+        NSLog(@"Parsed (Dictionary) JSON: %@", dictionaryOfDataFound);
     
-    return dataWeHaveFound;
+    return dictionaryOfDataFound;
 }
 
-
-
-
-
-
-
-
-
-
-
-- (NSDictionary *)getArrayOfData:(NSDictionary *)rawJSON
+- (NSArray *)getArrayOfData:(NSDictionary *)rawJSON :(NSString *)pathToArrayWeWant
 {
-    return @{};
+    if (![self _checkData:rawJSON :@{ @"path_to_array" : pathToArrayWeWant }])
+        return NULL;
+    
+    NSArray *pathToJSONData = [self _getPath:pathToArrayWeWant];
+    NSArray *arrayOfDataFound;
+    
+    NSLog(@"Path To Data: %@", pathToJSONData);
+    NSLog(@" "); NSLog(@" "); NSLog(@" ");
+    
+    for (int a = 0; a < [pathToJSONData count]; a++) {
+        
+        if (a == [pathToJSONData count]-1)
+            arrayOfDataFound = [rawJSON objectForKey:pathToJSONData[a]];
+        
+        if ([rawJSON valueForKey:pathToJSONData[a]] != NULL) {
+            rawJSON = [rawJSON objectForKey:pathToJSONData[a]];
+        } else {
+            NSLog(@"Parse Error: \"%@\" has an incorrect path!", pathToArrayWeWant);
+            return NULL;
+        }
+    }
+    
+    NSLog(@"Parsing Complete! :D");
+    NSLog(@" ");
+    
+    if (print_completed_json)
+        NSLog(@"Parsed (Array) JSON: %@", arrayOfDataFound);
+    
+    return arrayOfDataFound;
 }
 
 
@@ -111,9 +118,9 @@
 
 
 
-#pragma Basic Data Checks
+#pragma Private Functions
 
-- (BOOL)_checks:(NSDictionary *)rawJSON :(NSDictionary *)dataWeWant
+- (BOOL)_checkData:(NSDictionary *)rawJSON :(NSDictionary *)dataWeWant
 {
     if (!rawJSON || [[rawJSON allKeys] count] == 0) {
         NSLog(@"Raw JSON was NULL!");
@@ -131,6 +138,15 @@
     }
     
     return true;
+}
+
+- (NSArray *)_getPath:(NSString *)pathToData
+{
+    if ([pathToData rangeOfString:string_splitter].location == NSNotFound) {
+        return @[ pathToData ]; // Root level
+    } else {
+        return [pathToData componentsSeparatedByString:string_splitter]; // Multiple levels
+    }
 }
 
 @end

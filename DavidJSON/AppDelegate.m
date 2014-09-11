@@ -28,7 +28,8 @@
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        [json getData:responseObject[0] :dataWeWant]; // Test the parser here!
+        [json getData:responseObject[0] :dataWeWant];
+        [json getArrayOfData:responseObject[0] :@"owner/id"];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", [error localizedDescription]);
