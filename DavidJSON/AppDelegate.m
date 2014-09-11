@@ -8,7 +8,9 @@
 
 #import "AppDelegate.h"
 #import "DavidJSON.h"
+
 #import "AFNetworking/AFNetworking.h" // This has been manually downloaded from GitHub and copied into the project ... only used for testing!
+#import "SampleModel.h"
 
 @implementation AppDelegate
 
@@ -28,8 +30,14 @@
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        [json getData:responseObject[0] :dataWeWant];
-        [json getArrayOfData:responseObject[0] :@"owner/id"];
+        //        [json getData:responseObject[0] :dataWeWant];
+        //        [json getArrayOfData:responseObject[0] :@"owner/id"];
+        
+        SampleModel *test = (SampleModel *)[json getObject
+                                            :responseObject[0]      // Raw JSON
+                                            :dataWeWant             // Dictionary of Data we want
+                                            :[SampleModel class]];  // Class of NSObject
+        NSLog(@"Tets: %@", test);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", [error localizedDescription]);
@@ -45,7 +53,7 @@
              
              //     @"example_name"       : @"path / to / the / data" --- each "/" represents another level in the JSON
              
-             @"id"                 : @"owner/id",
+             @"user_id"            : @"owner/id",
              @"login_name"         : @"owner/login",
              @"avatar_image"       : @"owner/avatar_url"
              

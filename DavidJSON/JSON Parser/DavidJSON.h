@@ -12,5 +12,6 @@
 
 - (NSDictionary *)getData:(NSDictionary *)rawJSON :(NSDictionary *)dataWeWant;
 - (NSArray *)getArrayOfData:(NSDictionary *)rawJSON :(NSString *)pathToArrayWeWant;
+- (NSObject *)getObject:(NSDictionary *)rawJSON :(NSDictionary *)dataWeWant :(id)objectToCreate;
 
 @end

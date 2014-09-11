@@ -105,9 +105,10 @@
 
 #pragma Get NSObject From JSON
 
-- (NSDictionary *)getObject:(NSDictionary *)rawJSON
+- (NSObject *)getObject:(NSDictionary *)rawJSON :(NSDictionary *)dataWeWant :(id)objectToCreate
 {
-    return @{};
+    dataWeWant = [self getData:rawJSON :dataWeWant];
+    return [[[objectToCreate class] alloc] initWithDictionary:dataWeWant];
 }
 
 - (NSDictionary *)getArrayOfObjects:(NSDictionary *)rawJSON
@@ -150,3 +151,4 @@
 }
 
 @end
+

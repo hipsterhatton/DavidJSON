@@ -28,6 +28,7 @@
 		BCEA48B319C1CEF600DE0BCE /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEA48A819C1CEF600DE0BCE /* AFURLRequestSerialization.m */; };
 		BCEA48B419C1CEF600DE0BCE /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEA48AA19C1CEF600DE0BCE /* AFURLResponseSerialization.m */; };
 		BCEA48B519C1CEF600DE0BCE /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEA48AC19C1CEF600DE0BCE /* AFURLSessionManager.m */; };
+		BCEA48B919C1D02E00DE0BCE /* SampleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEA48B819C1D02E00DE0BCE /* SampleModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,8 @@
 		BCEA48AA19C1CEF600DE0BCE /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		BCEA48AB19C1CEF600DE0BCE /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		BCEA48AC19C1CEF600DE0BCE /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		BCEA48B719C1D02E00DE0BCE /* SampleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SampleModel.h; path = "Sample Models/SampleModel.h"; sourceTree = "<group>"; };
+		BCEA48B819C1D02E00DE0BCE /* SampleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SampleModel.m; path = "Sample Models/SampleModel.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +193,7 @@
 		BCEA489519C1CE2F00DE0BCE /* JSON Parser */ = {
 			isa = PBXGroup;
 			children = (
+				BCEA48B619C1D00600DE0BCE /* Sample Models */,
 				BCEA489619C1CE4600DE0BCE /* DavidJSON.h */,
 				BCEA489719C1CE4600DE0BCE /* DavidJSON.m */,
 			);
@@ -220,6 +224,15 @@
 				BCEA48AC19C1CEF600DE0BCE /* AFURLSessionManager.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		BCEA48B619C1D00600DE0BCE /* Sample Models */ = {
+			isa = PBXGroup;
+			children = (
+				BCEA48B719C1D02E00DE0BCE /* SampleModel.h */,
+				BCEA48B819C1D02E00DE0BCE /* SampleModel.m */,
+			);
+			name = "Sample Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +344,7 @@
 				BCEA48B319C1CEF600DE0BCE /* AFURLRequestSerialization.m in Sources */,
 				BCEA48B519C1CEF600DE0BCE /* AFURLSessionManager.m in Sources */,
 				BCEA489819C1CE4600DE0BCE /* DavidJSON.m in Sources */,
+				BCEA48B919C1D02E00DE0BCE /* SampleModel.m in Sources */,
 				BCEA486E19C1CE1B00DE0BCE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
