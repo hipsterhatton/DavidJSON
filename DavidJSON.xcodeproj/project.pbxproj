@@ -1,0 +1,495 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BCEA486219C1CE1B00DE0BCE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEA486119C1CE1B00DE0BCE /* Cocoa.framework */; };
+		BCEA486C19C1CE1B00DE0BCE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BCEA486A19C1CE1B00DE0BCE /* InfoPlist.strings */; };
+		BCEA486E19C1CE1B00DE0BCE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEA486D19C1CE1B00DE0BCE /* main.m */; };
+		BCEA487219C1CE1C00DE0BCE /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BCEA487019C1CE1C00DE0BCE /* Credits.rtf */; };
+		BCEA487519C1CE1C00DE0BCE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEA487419C1CE1C00DE0BCE /* AppDelegate.m */; };
+		BCEA487819C1CE1C00DE0BCE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCEA487619C1CE1C00DE0BCE /* MainMenu.xib */; };
+		BCEA487A19C1CE1C00DE0BCE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCEA487919C1CE1C00DE0BCE /* Images.xcassets */; };
+		BCEA488119C1CE1C00DE0BCE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEA488019C1CE1C00DE0BCE /* XCTest.framework */; };
+		BCEA488219C1CE1C00DE0BCE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEA486119C1CE1B00DE0BCE /* Cocoa.framework */; };
+		BCEA488A19C1CE1C00DE0BCE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BCEA488819C1CE1C00DE0BCE /* InfoPlist.strings */; };
+		BCEA488C19C1CE1C00DE0BCE /* DavidJSONTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEA488B19C1CE1C00DE0BCE /* DavidJSONTests.m */; };
+		BCEA489819C1CE4600DE0BCE /* DavidJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEA489719C1CE4600DE0BCE /* DavidJSON.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BCEA488319C1CE1C00DE0BCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCEA485619C1CE1B00DE0BCE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCEA485D19C1CE1B00DE0BCE;
+			remoteInfo = DavidJSON;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BCEA485E19C1CE1B00DE0BCE /* DavidJSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DavidJSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCEA486119C1CE1B00DE0BCE /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		BCEA486419C1CE1B00DE0BCE /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		BCEA486519C1CE1B00DE0BCE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BCEA486619C1CE1B00DE0BCE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BCEA486919C1CE1B00DE0BCE /* DavidJSON-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DavidJSON-Info.plist"; sourceTree = "<group>"; };
+		BCEA486B19C1CE1B00DE0BCE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BCEA486D19C1CE1B00DE0BCE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BCEA486F19C1CE1B00DE0BCE /* DavidJSON-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DavidJSON-Prefix.pch"; sourceTree = "<group>"; };
+		BCEA487119C1CE1C00DE0BCE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		BCEA487319C1CE1C00DE0BCE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BCEA487419C1CE1C00DE0BCE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BCEA487719C1CE1C00DE0BCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		BCEA487919C1CE1C00DE0BCE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BCEA487F19C1CE1C00DE0BCE /* DavidJSONTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DavidJSONTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCEA488019C1CE1C00DE0BCE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		BCEA488719C1CE1C00DE0BCE /* DavidJSONTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DavidJSONTests-Info.plist"; sourceTree = "<group>"; };
+		BCEA488919C1CE1C00DE0BCE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BCEA488B19C1CE1C00DE0BCE /* DavidJSONTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DavidJSONTests.m; sourceTree = "<group>"; };
+		BCEA489619C1CE4600DE0BCE /* DavidJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DavidJSON.h; path = "JSON Parser/DavidJSON.h"; sourceTree = "<group>"; };
+		BCEA489719C1CE4600DE0BCE /* DavidJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DavidJSON.m; path = "JSON Parser/DavidJSON.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BCEA485B19C1CE1B00DE0BCE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCEA486219C1CE1B00DE0BCE /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCEA487C19C1CE1C00DE0BCE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCEA488219C1CE1C00DE0BCE /* Cocoa.framework in Frameworks */,
+				BCEA488119C1CE1C00DE0BCE /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BCEA485519C1CE1B00DE0BCE = {
+			isa = PBXGroup;
+			children = (
+				BCEA486719C1CE1B00DE0BCE /* DavidJSON */,
+				BCEA488519C1CE1C00DE0BCE /* DavidJSONTests */,
+				BCEA486019C1CE1B00DE0BCE /* Frameworks */,
+				BCEA485F19C1CE1B00DE0BCE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BCEA485F19C1CE1B00DE0BCE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BCEA485E19C1CE1B00DE0BCE /* DavidJSON.app */,
+				BCEA487F19C1CE1C00DE0BCE /* DavidJSONTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BCEA486019C1CE1B00DE0BCE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BCEA486119C1CE1B00DE0BCE /* Cocoa.framework */,
+				BCEA488019C1CE1C00DE0BCE /* XCTest.framework */,
+				BCEA486319C1CE1B00DE0BCE /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BCEA486319C1CE1B00DE0BCE /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BCEA486419C1CE1B00DE0BCE /* AppKit.framework */,
+				BCEA486519C1CE1B00DE0BCE /* CoreData.framework */,
+				BCEA486619C1CE1B00DE0BCE /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		BCEA486719C1CE1B00DE0BCE /* DavidJSON */ = {
+			isa = PBXGroup;
+			children = (
+				BCEA489519C1CE2F00DE0BCE /* JSON Parser */,
+				BCEA487319C1CE1C00DE0BCE /* AppDelegate.h */,
+				BCEA487419C1CE1C00DE0BCE /* AppDelegate.m */,
+				BCEA487619C1CE1C00DE0BCE /* MainMenu.xib */,
+				BCEA487919C1CE1C00DE0BCE /* Images.xcassets */,
+				BCEA486819C1CE1B00DE0BCE /* Supporting Files */,
+			);
+			path = DavidJSON;
+			sourceTree = "<group>";
+		};
+		BCEA486819C1CE1B00DE0BCE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BCEA486919C1CE1B00DE0BCE /* DavidJSON-Info.plist */,
+				BCEA486A19C1CE1B00DE0BCE /* InfoPlist.strings */,
+				BCEA486D19C1CE1B00DE0BCE /* main.m */,
+				BCEA486F19C1CE1B00DE0BCE /* DavidJSON-Prefix.pch */,
+				BCEA487019C1CE1C00DE0BCE /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BCEA488519C1CE1C00DE0BCE /* DavidJSONTests */ = {
+			isa = PBXGroup;
+			children = (
+				BCEA488B19C1CE1C00DE0BCE /* DavidJSONTests.m */,
+				BCEA488619C1CE1C00DE0BCE /* Supporting Files */,
+			);
+			path = DavidJSONTests;
+			sourceTree = "<group>";
+		};
+		BCEA488619C1CE1C00DE0BCE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BCEA488719C1CE1C00DE0BCE /* DavidJSONTests-Info.plist */,
+				BCEA488819C1CE1C00DE0BCE /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BCEA489519C1CE2F00DE0BCE /* JSON Parser */ = {
+			isa = PBXGroup;
+			children = (
+				BCEA489619C1CE4600DE0BCE /* DavidJSON.h */,
+				BCEA489719C1CE4600DE0BCE /* DavidJSON.m */,
+			);
+			name = "JSON Parser";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BCEA485D19C1CE1B00DE0BCE /* DavidJSON */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCEA488F19C1CE1C00DE0BCE /* Build configuration list for PBXNativeTarget "DavidJSON" */;
+			buildPhases = (
+				BCEA485A19C1CE1B00DE0BCE /* Sources */,
+				BCEA485B19C1CE1B00DE0BCE /* Frameworks */,
+				BCEA485C19C1CE1B00DE0BCE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DavidJSON;
+			productName = DavidJSON;
+			productReference = BCEA485E19C1CE1B00DE0BCE /* DavidJSON.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BCEA487E19C1CE1C00DE0BCE /* DavidJSONTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCEA489219C1CE1C00DE0BCE /* Build configuration list for PBXNativeTarget "DavidJSONTests" */;
+			buildPhases = (
+				BCEA487B19C1CE1C00DE0BCE /* Sources */,
+				BCEA487C19C1CE1C00DE0BCE /* Frameworks */,
+				BCEA487D19C1CE1C00DE0BCE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BCEA488419C1CE1C00DE0BCE /* PBXTargetDependency */,
+			);
+			name = DavidJSONTests;
+			productName = DavidJSONTests;
+			productReference = BCEA487F19C1CE1C00DE0BCE /* DavidJSONTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BCEA485619C1CE1B00DE0BCE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Stephen Hatton";
+				TargetAttributes = {
+					BCEA487E19C1CE1C00DE0BCE = {
+						TestTargetID = BCEA485D19C1CE1B00DE0BCE;
+					};
+				};
+			};
+			buildConfigurationList = BCEA485919C1CE1B00DE0BCE /* Build configuration list for PBXProject "DavidJSON" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BCEA485519C1CE1B00DE0BCE;
+			productRefGroup = BCEA485F19C1CE1B00DE0BCE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BCEA485D19C1CE1B00DE0BCE /* DavidJSON */,
+				BCEA487E19C1CE1C00DE0BCE /* DavidJSONTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BCEA485C19C1CE1B00DE0BCE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCEA486C19C1CE1B00DE0BCE /* InfoPlist.strings in Resources */,
+				BCEA487A19C1CE1C00DE0BCE /* Images.xcassets in Resources */,
+				BCEA487219C1CE1C00DE0BCE /* Credits.rtf in Resources */,
+				BCEA487819C1CE1C00DE0BCE /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCEA487D19C1CE1C00DE0BCE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCEA488A19C1CE1C00DE0BCE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BCEA485A19C1CE1B00DE0BCE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCEA487519C1CE1C00DE0BCE /* AppDelegate.m in Sources */,
+				BCEA489819C1CE4600DE0BCE /* DavidJSON.m in Sources */,
+				BCEA486E19C1CE1B00DE0BCE /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCEA487B19C1CE1C00DE0BCE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCEA488C19C1CE1C00DE0BCE /* DavidJSONTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BCEA488419C1CE1C00DE0BCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BCEA485D19C1CE1B00DE0BCE /* DavidJSON */;
+			targetProxy = BCEA488319C1CE1C00DE0BCE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BCEA486A19C1CE1B00DE0BCE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BCEA486B19C1CE1B00DE0BCE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BCEA487019C1CE1C00DE0BCE /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BCEA487119C1CE1C00DE0BCE /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		BCEA487619C1CE1C00DE0BCE /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BCEA487719C1CE1C00DE0BCE /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		BCEA488819C1CE1C00DE0BCE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BCEA488919C1CE1C00DE0BCE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BCEA488D19C1CE1C00DE0BCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		BCEA488E19C1CE1C00DE0BCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		BCEA489019C1CE1C00DE0BCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DavidJSON/DavidJSON-Prefix.pch";
+				INFOPLIST_FILE = "DavidJSON/DavidJSON-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BCEA489119C1CE1C00DE0BCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DavidJSON/DavidJSON-Prefix.pch";
+				INFOPLIST_FILE = "DavidJSON/DavidJSON-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		BCEA489319C1CE1C00DE0BCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DavidJSON.app/Contents/MacOS/DavidJSON";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DavidJSON/DavidJSON-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DavidJSONTests/DavidJSONTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		BCEA489419C1CE1C00DE0BCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DavidJSON.app/Contents/MacOS/DavidJSON";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DavidJSON/DavidJSON-Prefix.pch";
+				INFOPLIST_FILE = "DavidJSONTests/DavidJSONTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BCEA485919C1CE1B00DE0BCE /* Build configuration list for PBXProject "DavidJSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCEA488D19C1CE1C00DE0BCE /* Debug */,
+				BCEA488E19C1CE1C00DE0BCE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCEA488F19C1CE1C00DE0BCE /* Build configuration list for PBXNativeTarget "DavidJSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCEA489019C1CE1C00DE0BCE /* Debug */,
+				BCEA489119C1CE1C00DE0BCE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BCEA489219C1CE1C00DE0BCE /* Build configuration list for PBXNativeTarget "DavidJSONTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCEA489319C1CE1C00DE0BCE /* Debug */,
+				BCEA489419C1CE1C00DE0BCE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BCEA485619C1CE1B00DE0BCE /* Project object */;
+}
