@@ -35,14 +35,12 @@
     
     for (NSString *key in listOfKeys) {
         
-        NSLog(@"Key: %@", key);
+        //        NSLog(@"Key: %@", key);
         
         NSArray *pathToJSONData = [self _getPath:[dataWeWant valueForKey:key]];
         
-        NSLog(@"Getting Past Here!");
-        
-        NSLog(@"Path To Data: %@", pathToJSONData);
-        NSLog(@" "); NSLog(@" "); NSLog(@" ");
+        //        NSLog(@"Path To Data: %@", pathToJSONData);
+        //        NSLog(@" "); NSLog(@" "); NSLog(@" ");
         
         // Make a copy of the raw JSON ... we will be "chopping" away at the raw JSON until we have reached the value we want!
         NSDictionary *rawJSONCopy = rawJSON;
@@ -61,8 +59,8 @@
         }
     }
     
-    NSLog(@"Parsing Complete! :D");
-    NSLog(@" ");
+    //    NSLog(@"Parsing Complete! :D");
+    //    NSLog(@" ");
     
     if (print_completed_json)
         NSLog(@"Parsed (Dictionary) JSON: %@", dictionaryOfDataFound);
@@ -78,8 +76,8 @@
     NSArray *pathToJSONData = [self _getPath:pathToArrayWeWant];
     NSArray *arrayOfDataFound;
     
-    NSLog(@"Path To Data: %@", pathToJSONData);
-    NSLog(@" "); NSLog(@" "); NSLog(@" ");
+    //    NSLog(@"Path To Data: %@", pathToJSONData);
+    //    NSLog(@" "); NSLog(@" "); NSLog(@" ");
     
     for (int a = 0; a < [pathToJSONData count]; a++) {
         
@@ -94,8 +92,8 @@
         }
     }
     
-    NSLog(@"Parsing Complete! :D");
-    NSLog(@" ");
+    //    NSLog(@"Parsing Complete! :D");
+    //    NSLog(@" ");
     
     if (print_completed_json)
         NSLog(@"Parsed (Array) JSON: %@", arrayOfDataFound);
@@ -119,15 +117,15 @@
     NSMutableArray *arrayOfObjects = [[NSMutableArray alloc] init];
     
     if ([arrayOfJSONData isKindOfClass:[NSArray class]]) {
-        NSLog(@"It's an array!");
         
         for (int a = 0; a < [arrayOfJSONData count]; a++)
             [arrayOfObjects addObject: [self getObject:arrayOfJSONData[a] :dataWeWant :objectToCreate]];
         
-        NSLog(@"Array of Objects: %@", arrayOfObjects);
+        if (print_completed_json)
+            NSLog(@"Array of Objects: %@", arrayOfObjects);
         
     } else {
-        NSLog(@"It's NOT an array!");
+        NSLog(@"Error - Data is NOT an array");
         return NULL;
     }
     
