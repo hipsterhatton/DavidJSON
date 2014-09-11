@@ -20,18 +20,15 @@
     
     // Some sample code to retrieve some JSON...
     
-    NSURL *url = [NSURL URLWithString:@"http://8tracks.com/users/1930038.json"];
+    NSURL *url = [NSURL URLWithString:@"https://api.github.com/users/hipsterhatton/repos"];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
-    
-    [request setValue:@"api_key_goes_here..."    forHTTPHeaderField:@"X-Api-Key"];
-    [request setValue:@"3"      forHTTPHeaderField:@"X-Api-Version"];
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     [operation setResponseSerializer:[AFJSONResponseSerializer new]];
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        [json getData:responseObject :dataWeWant]; // Test the parser here!
+        [json getData:responseObject[0] :dataWeWant]; // Test the parser here!
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", [error localizedDescription]);
@@ -45,12 +42,11 @@
 {
     return @{
              
-             //     @"example_name"       : @"path / to / the / data"   ---   each "/" represents another level in the JSON
+             //     @"example_name"       : @"path / to / the / data" --- each "/" represents another level in the JSON
              
-             @"id"                 : @"user/id",
-             @"login_name"         : @"user/login",
-             @"avatar_image"       : @"user/avatar_urls/max200",
-             @"status"             : @"status"
+             @"id"                 : @"owner/id",
+             @"login_name"         : @"owner/login",
+             @"avatar_image"       : @"owner/avatar_url"
              
              };
 }
