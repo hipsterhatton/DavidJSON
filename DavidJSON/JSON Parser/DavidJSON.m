@@ -8,39 +8,30 @@
 
 #import "DavidJSON.h"
 
-#define print_raw_json          false
-#define print_completed_json    false
-#define string_splitter         @"/"
+BOOL const PRINT_RAW_JSON =         NO;
+BOOL const PRINT_COMPLETED_JSON =   NO;
+
+static NSString * const kSTRING_SPLITTER = @"/";
 
 @implementation DavidJSON
 
-// Put simply: this library is designed to: take raw JSON + a dictionary (containing paths to pieces of data we need inside the raw JSON)
-//      eg: @{ PostCode : Customer Details > Address > Postcode }
-// and returns the same dictionary, with all the paths replaced with the JSON data they point to
-//      eg: @{ PostCode : AB1 2CD }
-// Why? Because dictionaries are easy to work with :D and most of the time: we need large amounts of data from JSON, this
-// makes it easier to get those large amounts + work with them :D
 
 
-
-#pragma Get Data From JSON
+#pragma mark - Get Data
+// These methods extra data from the raw JSON pasesd in
 
 - (NSDictionary *)getData:(NSDictionary *)rawJSON :(NSDictionary *)dataWeWant
 {
-    if (![self _checkData:rawJSON :dataWeWant])
+    if (![self _checkData:rawJSON :dataWeWant]) {
         return NULL;
+    }
     
     NSArray *listOfKeys = [dataWeWant allKeys];
     NSMutableDictionary *dictionaryOfDataFound = [[NSMutableDictionary alloc] init];
     
     for (NSString *key in listOfKeys) {
         
-        //        NSLog(@"Key: %@", key);
-        
         NSArray *pathToJSONData = [self _getPath:[dataWeWant valueForKey:key]];
-        
-        //        NSLog(@"Path To Data: %@", pathToJSONData);
-        //        NSLog(@" "); NSLog(@" "); NSLog(@" ");
         
         // Make a copy of the raw JSON ... we will be "chopping" away at the raw JSON until we have reached the value we want!
         NSDictionary *rawJSONCopy = rawJSON;
@@ -48,62 +39,66 @@
         for (int a = 0; a < [pathToJSONData count]; a++) {
             
             if ([rawJSONCopy valueForKey:pathToJSONData[a]] != NULL) {
+                
                 rawJSONCopy = [rawJSONCopy objectForKey:pathToJSONData[a]];
                 
-                if (a == [pathToJSONData count]-1)
+                if (a == [pathToJSONData count]-1) {
+                    
                     [dictionaryOfDataFound setObject:rawJSONCopy forKey:key];
+                }
+                
             } else {
+                
                 NSLog(@"Parse Error: \"%@\" has an incorrect path!", key);
-                return NULL;
+                
             }
         }
     }
     
-    //    NSLog(@"Parsing Complete! :D");
-    //    NSLog(@" ");
-    
-    if (print_completed_json)
+    if (PRINT_COMPLETED_JSON) {
         NSLog(@"Parsed (Dictionary) JSON: %@", dictionaryOfDataFound);
+    }
     
     return dictionaryOfDataFound;
 }
 
-- (NSArray *)getArrayOfData:(NSDictionary *)rawJSON :(NSString *)pathToArrayWeWant
+- (NSMutableArray *)getArrayOfData:(NSDictionary *)rawJSON :(NSString *)pathToArrayWeWant
 {
-    if (![self _checkData:rawJSON :@{ @"path_to_array" : pathToArrayWeWant }])
+    if (![self _checkData:rawJSON :@{ @"path_to_array" : pathToArrayWeWant }]) {
         return NULL;
+    }
     
     NSArray *pathToJSONData = [self _getPath:pathToArrayWeWant];
-    NSArray *arrayOfDataFound;
-    
-    //    NSLog(@"Path To Data: %@", pathToJSONData);
-    //    NSLog(@" "); NSLog(@" "); NSLog(@" ");
+    NSMutableArray *arrayOfDataFound;
     
     for (int a = 0; a < [pathToJSONData count]; a++) {
         
-        if (a == [pathToJSONData count]-1)
+        if (a == [pathToJSONData count]-1) {
             arrayOfDataFound = [rawJSON objectForKey:pathToJSONData[a]];
+        }
         
         if ([rawJSON valueForKey:pathToJSONData[a]] != NULL) {
+            
             rawJSON = [rawJSON objectForKey:pathToJSONData[a]];
+            
         } else {
+            
             NSLog(@"Parse Error: \"%@\" has an incorrect path!", pathToArrayWeWant);
             return NULL;
         }
     }
     
-    //    NSLog(@"Parsing Complete! :D");
-    //    NSLog(@" ");
-    
-    if (print_completed_json)
+    if (PRINT_COMPLETED_JSON) {
         NSLog(@"Parsed (Array) JSON: %@", arrayOfDataFound);
+    }
     
     return arrayOfDataFound;
 }
 
 
 
-#pragma Get NSObject From JSON
+#pragma mark - Get NSObject From Data
+// These methods extra data from the raw JSON pasesd in, they then construct NSObject's from the data, and return that NSObject
 
 - (NSObject *)getObject:(NSDictionary *)rawJSON :(NSDictionary *)dataWeWant :(id)objectToCreate
 {
@@ -118,13 +113,16 @@
     
     if ([arrayOfJSONData isKindOfClass:[NSArray class]]) {
         
-        for (int a = 0; a < [arrayOfJSONData count]; a++)
+        for (int a = 0; a < [arrayOfJSONData count]; a++) {
             [arrayOfObjects addObject: [self getObject:arrayOfJSONData[a] :dataWeWant :objectToCreate]];
+        }
         
-        if (print_completed_json)
+        if (PRINT_COMPLETED_JSON) {
             NSLog(@"Array of Objects: %@", arrayOfObjects);
+        }
         
     } else {
+        
         NSLog(@"Error - Data is NOT an array");
         return NULL;
     }
@@ -134,7 +132,7 @@
 
 
 
-#pragma Private Functions
+# pragma mark - Private Methods
 
 - (BOOL)_checkData:(NSDictionary *)rawJSON :(NSDictionary *)dataWeWant
 {
@@ -148,7 +146,7 @@
         return false;
     }
     
-    if (print_raw_json) {
+    if (PRINT_RAW_JSON) {
         NSLog(@"Raw JSON: %@", rawJSON);
         NSLog(@" "); NSLog(@" "); NSLog(@" ");
     }
@@ -158,11 +156,10 @@
 
 - (NSArray *)_getPath:(NSString *)pathToData
 {
-    NSLog(@"Path to data: %@", pathToData);
-    if ([pathToData rangeOfString:string_splitter].location == NSNotFound) {
+    if ([pathToData rangeOfString:kSTRING_SPLITTER].location == NSNotFound) {
         return @[ pathToData ]; // Root level
     } else {
-        return [pathToData componentsSeparatedByString:string_splitter]; // Multiple levels
+        return [pathToData componentsSeparatedByString:kSTRING_SPLITTER]; // Multiple levels
     }
 }
 

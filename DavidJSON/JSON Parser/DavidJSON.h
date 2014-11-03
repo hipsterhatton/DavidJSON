@@ -11,7 +11,7 @@
 @interface DavidJSON : NSObject
 
 - (NSDictionary *)getData:(NSDictionary *)rawJSON :(NSDictionary *)dataWeWant;
-- (NSArray *)getArrayOfData:(NSDictionary *)rawJSON :(NSString *)pathToArrayWeWant;
+- (NSMutableArray *)getArrayOfData:(NSDictionary *)rawJSON :(NSString *)pathToArrayWeWant;
 - (NSObject *)getObject:(NSDictionary *)rawJSON :(NSDictionary *)dataWeWant :(id)objectToCreate;
 - (NSArray *)getArrayOfObjects:(NSDictionary *)rawJSON :(NSString *)pathToArrayWeWant :(NSDictionary *)dataWeWant :(id)objectToCreate;
 
