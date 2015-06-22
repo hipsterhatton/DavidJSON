@@ -7,48 +7,13 @@
 //
 
 #import "AppDelegate.h"
-#import "DavidJSON.h"
-
-#import "AFNetworking/AFNetworking.h" // This has been manually downloaded from GitHub and copied into the project ... only used for testing!
-#import "SampleModel.h"
+#import "NSObject+DavidJSON.h"
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    DavidJSON *json = [[DavidJSON alloc] init];
-    NSDictionary *dataWeWant = [self _dataWeWant];
-    
-    
-    // Some sample code to retrieve some JSON...
-    
-    NSURL *url = [NSURL URLWithString:@"https://api.github.com/users/hipsterhatton/repos"];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
-    
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [operation setResponseSerializer:[AFJSONResponseSerializer new]];
-    
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Do Something Now...");
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", [error localizedDescription]);
-    }];
-    
-    [operation start];
-    
-}
-
-- (NSDictionary *)_dataWeWant
-{
-    return @{
-             
-             //     @"example_name"       : @"path / to / the / data" --- each "/" represents another level in the JSON
-             
-             @"user_id"            : @"id",
-             @"login_name"         : @"name",
-             @"avatar_image"       : @"likes_count"
-             
-             };
+    NSLog(@"Launching with DavidJSON...");
 }
 
 @end
