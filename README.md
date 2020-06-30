@@ -6,4 +6,4 @@ You can initialize an NSObject and set its attributes with data extracted from s
 
 Each NSObject has a schema (which is a hash) mapping a JSON key -to- an object attribute. Each NSObject can have as many schemas as needed, and you can specify which schema to use when initializing the object
 
-It automatically typecast the relevant data types (int, string, float) and also supported more complex data types: array, hash
+It automatically typecasts the relevant data types (int, string, float) and also supported more complex data types: array, hash
